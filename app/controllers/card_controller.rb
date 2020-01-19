@@ -32,8 +32,7 @@ class CardController < ApplicationController
     
   end
   
-  def new # カードの登録画面。送信ボタンを押すとcreateアクションへ。
-
+  def new # カードの登録画面。送信ボタンを押すとcreateアクションへ
     redirect_to action: "index" if @card.present?
   end
 
