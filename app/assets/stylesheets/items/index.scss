@@ -21,7 +21,7 @@
       padding-bottom: 15px;
     }
     &__more{
-      font-size: 12px;
+      font-size: 14px;
       font-weight: bold;
       
       color:  #0099E8;
@@ -86,17 +86,15 @@
       }
       &__main::before{
         content: "";
-        top: -20px;
+        top: 90px;
         left: 0;
         transform:skewX(45deg);
         transform:skewY(45deg);
-        // border-bottom:9em solid transparent;
-        // border-left: 9em solid #EA352D;
         background-color: #EA352D;
         width: 180px;
         height: 50px;
         position: absolute;
-        z-index: 2;
+        z-index: 1;
 
         &__picture{
         }
@@ -113,14 +111,14 @@
 
       &__main::after{
         content: "SOLD OUT";
-        font-size:15px;
+        font-size:25px;
         display: block;
-        top: 40px;
+        top: 90px;
         transform: rotate(45deg);
         color: #fff;
-        left: 95px;
+        left: 17px;
         position: absolute;
-        z-index: 3;
+        z-index: 2;
 
         &__picture{
         }
@@ -141,6 +139,7 @@
         height: 50px;
         padding: 10px 7px 10px 7px;
         color: black;
+        position:relative;z-index:10;
       }
     }
   }
