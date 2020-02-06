@@ -9,15 +9,22 @@
 
 -if user_signed_in?
   .toppage__choice
-    .toppage__choice__left
-      .toppage__choice__left__category
-        = icon('fas', 'list-ul ', style: 'color:red',class: 'choice__category__icon')
-        カテゴリーから探す
-        
-      .toppage__choice__left__brand
-        = icon('fas', 'tag ',style: 'color:red', class: 'choice__brand__icon')
-        ブランドから探す
+    %ul.toppage__choice__left
+      %li.toppage__choice__left__category
+        %p
+          = icon('fas', 'list-ul ', style: 'color:red',class: 'choice__category__icon')
+          カテゴリーから探す
+          .toppage__choice__left__category__parents
+            - @parents.each do |parent|
+              = link_to "#{parent.name}", items_path(parent), class: "parent_category",id: "#{parent.id}"
+            .toppage__choice__left__category__parents__children
+            .toppage__choice__left__category__parents__children__grand_children
 
+      %li.toppage__choice__left__brand
+        %p
+          = icon('fas', 'tag ',style: 'color:red', class: 'choice__brand__icon')
+          ブランドから探す
+      
     .toppage__choice__right
       .toppage__choice__right__management
         .toppage__choice__right__management__good
@@ -37,13 +44,22 @@
 
 - else
   .toppage__choice
-    .toppage__choice__left
-      .toppage__choice__left__category
-        = icon('fas', 'list-ul ', style: 'color:red',class: 'choice__category__icon')
-        カテゴリーから探す
-      .toppage__choice__left__brand
-        = icon('fas', 'tag ',style: 'color:red', class: 'choice__brand__icon')
-        ブランドから探す
+    %ul.toppage__choice__left
+      %li.toppage__choice__left__category
+        %p
+          = icon('fas', 'list-ul ', style: 'color:red',class: 'choice__category__icon')
+          カテゴリーから探す
+          .toppage__choice__left__category__parents
+            - @parents.each do |parent|
+              = link_to "#{parent.name}", items_path(parent), class: "parent_category",id: "#{parent.id}"
+            .toppage__choice__left__category__parents__children
+            .toppage__choice__left__category__parents__children__grand_children
+
+      %li.toppage__choice__left__brand
+        %p
+          = icon('fas', 'tag ',style: 'color:red', class: 'choice__brand__icon')
+          ブランドから探す
+          
     .toppage__choice__right
       .toppage__choice__right__management
         .toppage__choice__right__management__registration
