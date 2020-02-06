@@ -67,10 +67,6 @@
 }
 } 
 
-//  .fas{
-//    margin-left:160px ;
-// }
-
 .toppage__choice{
   display:flex;
   justify-content: space-between;
@@ -85,6 +81,37 @@
   padding-bottom: 5px;
 
   cursor: pointer;
+  .parent_category{
+    text-decoration: none;
+    color:white;
+    font-size: 15px;
+    background-color: darkgray;
+    width: 80px;
+  }
+  .parent_category:hover{
+    color:red;
+  }
+  .child_category{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    background-color: darkgray;
+    width: 70px;;
+  }
+  .child_category:hover{
+    color: red;
+  }
+  .grand_child_category{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    background-color: darkgray;
+  }
+  .grand_child_category:hover{
+    color: red;
+  }
+
+
   &__left{
     display: flex;
     justify-content: flex-start;
@@ -94,12 +121,32 @@
       height: 2rem;
       margin-right: 30px;
       font-weight: bold;
+      &__parents{
+        display: none;
+        text-align: center;
+        &__children{
+          display: grid;
+          position: fixed;
+          left: 180px;
+          top: 97px;
+          text-align: center;
+        }
+        &__children__grand_children{
+          position: fixed;
+          top: 97px;
+          left: 250px;
+          display: grid;
+          text-align: center;
+        }
+      }
     }
     &__brand{
       color: inherit;
       height: 2rem;
       margin-right: 30px;
       font-weight: bold;
+      position: absolute;
+      margin-left: 150px;
     }
   }
 
@@ -188,6 +235,7 @@
 .picture1{
   &__scroll{
     display:flex;
+    z-index: -10;
     &__scroll1{
       background-image:image-url("gahag-0116277904-1.jpg");
       background-size: cover;
