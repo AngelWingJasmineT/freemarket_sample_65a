@@ -31,5 +31,6 @@ Rails.application.routes.draw do
       get 'detail_search'
     end
   end
-  resources :category,top, only: [:new]
+  resources :categorry, only: [:new]
+  resources :top, only: [:new]
 end
